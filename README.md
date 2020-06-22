@@ -5,6 +5,15 @@ Required configuration via environment variables:
 
 - API:  `<set to rating-api endpoint>`. This *does not* have to be publicly accessible. The application proxies the API requests via the backend to the rating-api endpoint.
 
+## Helm install
+
+```sh
+helm upgrade --install rating-web ./rating-web \
+    --set env.api_uri=$API # \
+    #--set ingress.enabled=false \
+    #--set service.type=LoadBalancer
+```
+
 # Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
